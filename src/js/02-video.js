@@ -8,6 +8,8 @@ const currentTime = localStorage.getItem(STORAGE_KEY);
 
 if (currentTime) {
   player.setCurrentTime(currentTime);
+} else {
+  player.setCurrentTime(0);
 }
 
 player.on('timeupdate', throttle(onTimeUpdate, 1000));
