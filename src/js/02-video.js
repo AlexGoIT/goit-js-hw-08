@@ -20,5 +20,8 @@ function onTimeUpdate({ seconds }) {
   localStorage.setItem(STORAGE_KEY, seconds);
 }
 
-
 player.on('timeupdate', throttle(onTimeUpdate, 1000));
+
+player.on('loaded', () => {
+  player.play();
+});
